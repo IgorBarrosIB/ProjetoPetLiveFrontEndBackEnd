@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+<div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -16,6 +16,7 @@
               </div>
             </div>
         </nav>
+  <div class="container">
 
       <form @submit.prevent="submitForm">
         <div class="form-group">
@@ -26,6 +27,7 @@
         </div>
       </form>
   </div>
+</div>
 </template>
 
 <script setup>
