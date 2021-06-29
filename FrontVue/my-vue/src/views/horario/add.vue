@@ -19,13 +19,18 @@
   <div class="container">
 
       <form @submit.prevent="submitForm">
-        <div class="form-group">
-          <input v-model="hora" type="time" id="appt" name="appt" min="00:00" max="24:00" required>
-          <input v-model="diaSemana" class="mt-2 mb-2 form-control form-control-sm" type="text" placeholder="Dia da semana">
-          <input v-model="dispensadoDia" class="mb-2 form-control form-control-sm" type="text" placeholder="Dispensado Dia">
+        
+          <div class="form-group">
+             <label for="exampleInputEmail1" class="mb-1">Horário</label><br/>
+            <input v-model="hora" type="time" id="appt" name="appt" min="00:00" max="24:00" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Dia semana:</label>
+            <input v-model="diaSemana" class="mt-1 mb-2 form-control form-control-sm" type="text" placeholder="Dia da semana">
+          </div>
           <button class="btn btn-info btn-sm m-2" type="submit">Salvar</button>
           <button class="btn btn-info btn-sm" @click="voltar()">Voltar</button>
-        </div>
       </form>
   </div>
 </div>
@@ -46,7 +51,6 @@ function submitForm() {
   api.post('horario/add', {
     hora: hora.value,
     diaSemana: diaSemana.value,
-    dispensadoDia: dispensadoDia.value,
   })
   .then(() => {
     router.push('/')

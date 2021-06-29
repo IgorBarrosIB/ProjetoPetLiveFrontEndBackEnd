@@ -17,15 +17,22 @@
             </div>
         </nav>
   <div class="container">
-
       <form @submit.prevent="submitForm">
+          <input v-model="id"  type="hidden" id="appt" name="appt" min="00:00" max="24:00" disabled required>
         <div class="form-group">
-          <input v-model="hora" type="time" id="appt" name="appt" min="00:00" max="24:00" required>
-          <input v-model="diaSemana" class="mt-2 mb-2 form-control form-control-sm" type="text" placeholder=".form-control-sm">
-          <input v-model="dispensadoDia" class="mb-2 form-control form-control-sm" type="text" placeholder=".form-control-sm">
-          <button class="btn btn-info btn-sm" @click="submitForm()">Salvar</button>
+        <label for="exampleInputEmail1" class="mb-1">Hora:</label><br/>
+      <input v-model="hora" type="time" id="appt" name="appt" min="00:00" max="24:00" required>
         </div>
-      </form>
+          <div class="form-group">
+        <label for="exampleInputEmail1">Dia semana:</label>
+      <input v-model="diaSemana" class="mt-2 mb-2 form-control form-control-sm" type="text" placeholder=".form-control-sm">
+          </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Ativo dia:</label>
+      <input v-model="dispensadoDia" class="mb-2 form-control form-control-sm" type="text" placeholder=".form-control-sm">
+        </div>
+      <button class="btn btn-info btn-sm" @click="submitForm()">Salvar</button>   
+    </form>
   </div>
 </div>
 </template>
